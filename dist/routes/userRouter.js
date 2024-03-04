@@ -40,7 +40,7 @@ userRouter.get('/', async (req, res) => {
 });
 userRouter.post('/register', async (req, res, next) => {
     try {
-        console.log(req.body);
+        // console.log(req.body)
         const newUserFirstName = req.body.firstname;
         const newUserLastName = req.body.lastname;
         const newUserEmail = req.body.email;
