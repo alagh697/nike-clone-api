@@ -3,7 +3,7 @@ import { ResultSetHeader, RowDataPacket } from 'mysql2'
 import Favorite from '../types/favorite'
 
 export const createFavorite = (userId: number, productId: string, callback: Function ) => {
-    const queryString = 'INSERT INTO likes (user_id, product_id) VALUES (?, ?)'
+    const queryString = 'INSERT INTO favorite (user_id, product_id) VALUES (?, ?)'
 
     connection.query(queryString, [userId, productId], (err, result) => {
         if (err) {

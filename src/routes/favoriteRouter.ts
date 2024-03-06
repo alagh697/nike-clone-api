@@ -25,7 +25,7 @@ favoriteRouter.post('/', async (req:Request, res: Response, next: NextFunction) 
             return next(error);
         }
 
-        return res.status(201).json({ favoriteId})
+        return res.status(201).json({ favoriteId })
     });
 } catch (error) {
         // Handle any uncaught error here

@@ -3,7 +3,7 @@ import { ResultSetHeader, RowDataPacket } from 'mysql2'
 import Review from '../types/review'
 
 export const createReview = (userId: number, productId: string, star: number, message: string, callback: Function ) => {
-    const queryString = 'INSERT INTO likes (user_id, product_id, star, message) VALUES (?, ?, ?, ?)'
+    const queryString = 'INSERT INTO review (user_id, product_id, star, message) VALUES (?, ?, ?, ?)'
 
     connection.query(queryString, [userId, productId, star, message], (err, result) => {
         if (err) {
@@ -11,7 +11,7 @@ export const createReview = (userId: number, productId: string, star: number, me
         }
 
         if (!result) {
-            return callback(new Error('Failed to create Like'));
+            return callback(new Error('Failed to create Review'));
           }
 
         const { insertId } = <ResultSetHeader>result
